@@ -9,7 +9,7 @@ var keys = {};
 $(document).keydown(function(e) {
     console.log(e);
     
-
+touch1(e.keyCode);
  
    move(e.keyCode);
    
@@ -69,7 +69,7 @@ var upKey = 38;
 var downKey = 40;
 var leftKey = 37;
 var rightKey = 39;
-var attackKey = 32; 
+var attackKey = 90; 
 var kirbyH = 100;
 
 
@@ -126,6 +126,27 @@ var gravity = function() {
 };
 
 
+
+var touch1 = function(a){
+  
+  //console.log(kirbyObject.x - linkObject.x);
+// console.log(kirbyObject.y - linkObject.y);
+ //console.log(linkObject.x);
+ //console.log(linkObject.y);
+  
+  
+  if(kirbyObject.x - linkObject.x >= -150 && kirbyObject.x - linkObject.x <= 150 && kirbyObject.y - linkObject.y >= -200 && kirbyObject.y - linkObject.y <= 150 && a== attackKey ){
+    
+   linkH = linkH-10;
+     $("#L").empty(linkH);
+     $("#L").append(linkH);
+    
+    console.log(kirbyH);
+    
+  }
+  
+  
+};
 
 
 

@@ -23,7 +23,7 @@ var keys = {};
 
 $(document).keydown(function(e) {
     //console.log(e);
-    
+    touch(e.keyCode);
    move1(e.keyCode);
 
  
@@ -117,7 +117,7 @@ var gravity1 = function() {
   }
 };
 
-var touch = function(){
+var touch = function(a){
   
   //console.log(kirbyObject.x - linkObject.x);
 // console.log(kirbyObject.y - linkObject.y);
@@ -125,9 +125,13 @@ var touch = function(){
  //console.log(linkObject.y);
   
   
-  if(kirbyObject.x - linkObject.x >= -150 && kirbyObject.x - linkObject.x <= 150 && kirbyObject.y - linkObject.y >= -200 && kirbyObject.y - linkObject.y <= 150 ){
+  if(kirbyObject.x - linkObject.x >= -150 && kirbyObject.x - linkObject.x <= 150 && kirbyObject.y - linkObject.y >= -200 && kirbyObject.y - linkObject.y <= 150 && a== attackKey1 ){
     
-    console.log("TOUCH!!");
+   kirbyH = kirbyH-10;
+     $("#K").empty(kirbyH);
+     $("#K").append(kirbyH);
+    
+    console.log(linkH);
     
   }
   
