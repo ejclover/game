@@ -12,7 +12,9 @@ link.src= "https://vignette1.wikia.nocookie.net/zelda/images/1/18/Link_(Sprite)_
 linkObject.x = 200;
 linkObject.y = 200;
 
-
+/*link.height = 200;
+link.width = 200;
+*/
 
 
 
@@ -23,8 +25,10 @@ var keys = {};
 
 $(document).keydown(function(e) {
     //console.log(e);
+     
     touch(e.keyCode);
    move1(e.keyCode);
+   
 
  
     if (keys[87] && keys[65]) {
@@ -102,7 +106,6 @@ var move1 = function(key) {
 
 
 
-
 var gravity1 = function() {
 	var kGravityScale = 1;
   var kGroundHeight = 500;
@@ -117,6 +120,17 @@ var gravity1 = function() {
   }
 };
 
+/*
+var change = function(p){
+  
+  if(p == attackKey1){
+   
+  
+  
+  
+  }
+};
+*/
 var touch = function(a){
   
   //console.log(kirbyObject.x - linkObject.x);
@@ -127,13 +141,35 @@ var touch = function(a){
   
   if(kirbyObject.x - linkObject.x >= -150 && kirbyObject.x - linkObject.x <= 150 && kirbyObject.y - linkObject.y >= -200 && kirbyObject.y - linkObject.y <= 150 && a== attackKey1 ){
     
-   kirbyH = kirbyH-10;
+  
+   
+   if(kirbyH<=0){
+      $("#K").empty(kirbyH);
+     $("#K").append(kirbyH);
+      $("#win").empty();
+     $("#win").append("LINK WINS");
+   
+   return;
+   
+   }
+   
+   link.src = "http://images.complex.com/complex/image/upload/c_limit,fl_progressive,q_80,w_680/zlgrlt8sc4dxp9tou9yc.jpg";
+   link.height = 200;
+   link.width = 200;
+   
+   setTimeout(function(){ link.src ="https://vignette1.wikia.nocookie.net/zelda/images/1/18/Link_(Sprite)_The_Legend_of_Zelda.png/revision/latest?cb=20130117162823"; }, 200);
+
+
+   
+    kirbyH = kirbyH-10;
      $("#K").empty(kirbyH);
      $("#K").append(kirbyH);
     
     console.log(linkH);
     
   }
+  
+ 
   
   
 };

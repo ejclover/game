@@ -137,11 +137,27 @@ var touch1 = function(a){
   
   if(kirbyObject.x - linkObject.x >= -150 && kirbyObject.x - linkObject.x <= 150 && kirbyObject.y - linkObject.y >= -200 && kirbyObject.y - linkObject.y <= 150 && a== attackKey ){
     
-   linkH = linkH-10;
+   if(linkH<=0){
+      $("#L").empty(linkH);
+     $("#L").append(linkH);
+      $("#win").empty();
+     $("#win").append("KIRBY WINS");
+   
+   return;
+   
+   }
+   
+    kirby.src = "http://orig08.deviantart.net/e643/f/2015/089/5/9/8_bit_kirby_tribute_by_jcgraphic-d8nsqyq.png";
+   kirby.height = 200;
+   kirby.width = 200;
+   
+   setTimeout(function(){ kirby.src ="https://vignette3.wikia.nocookie.net/spritechronicles/images/5/5c/Kirby.png/revision/latest?cb=20101010225540"; }, 200);
+   
+   linkH =linkH-10;
      $("#L").empty(linkH);
      $("#L").append(linkH);
     
-    console.log(kirbyH);
+    
     
   }
   

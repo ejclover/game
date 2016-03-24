@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  
+   $("#K").append(kirbyH);
+   $("#L").append(linkH);
   
  //$("#health1").append(linkH);
  //$("#health").append(kirbyH);
@@ -39,6 +40,7 @@ var render = function() {
   gravity();
   gravity1();
   
+  console.log(link.height)
   touch1()
  touch();
  
@@ -47,9 +49,9 @@ var render = function() {
   
     context.fillRect(0,kGroundHeight,canvas.width,10);
 
-  context.drawImage(kirby, kirbyObject.x, kirbyObject.y);
+  context.drawImage(kirby, kirbyObject.x, kirbyObject.y,200,200);
   
-    context.drawImage(link, linkObject.x, linkObject.y);
+    context.drawImage(link, linkObject.x, linkObject.y,200,200);
 
 };
 
